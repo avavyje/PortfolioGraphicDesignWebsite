@@ -30,7 +30,6 @@ body {
     background: #FF69B4;
     height: 20px;
     text-align: center;
-    overflow: hidden;
     transition: height 0.4s ease;
 }
 
@@ -261,4 +260,5 @@ video.slide {
     line-height: 70px;
     font-size: 19px;
 }
+
 
