@@ -1,0 +1,264 @@
+
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    font-family: Arial, sans-serif;
+}
+
+
+.site-header {
+    background: black;
+    height: 120px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.site-header h1 {
+    font-size: 42px;
+    margin: 0;
+    color: white;
+}
+
+
+.site-nav {
+    background: #FF69B4;
+    height: 20px;
+    text-align: center;
+    overflow: hidden;
+    transition: height 0.4s ease;
+}
+
+.site-nav:hover {
+    height: 70px;
+}
+
+.site-nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    line-height: 70px;
+    font-size: 19px;
+}
+
+.site-nav a:hover {
+    text-decoration: underline;
+    text-underline-offset: 6px;
+}
+
+
+.main-area {
+    flex: 1;
+    position: relative;
+}
+
+
+.center-zone {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.pink-stripes::before,
+.pink-stripes::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 25px;
+    background: #ffc1dc;
+}
+
+.pink-stripes::before {
+    top: 40px;
+}
+
+.pink-stripes::after {
+    bottom: 40px;
+}
+
+
+
+.carousel {
+    position: relative;
+    width: 1020px;
+}
+
+.carousel-window {
+    width: 1020px;
+    overflow: hidden;
+}
+
+.carousel-track {
+    display: flex;
+    gap: 30px;
+}
+
+
+.slide {
+    width: 320px;
+    height: 480px;
+    flex-shrink: 0;
+
+    object-fit: contain;   
+   
+    opacity: 0.35;
+    transform: scale(0.85);
+    transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+
+.slide.active {
+    opacity: 1;
+    transform: scale(1);
+}
+
+
+.carousel-arrow {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    background: black;
+    color: white;
+    border: none;
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    cursor: pointer;
+    font-size: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.carousel-arrow.left {
+    left: -50px;
+    transform: translateY(-50%) rotate(180deg);
+}
+
+
+.carousel-arrow.right {
+    right: -50px;
+}
+
+
+footer {
+    background: black;
+    color: white;
+    text-align: center;
+    padding: 15px;
+}
+.slide video,
+video.slide {
+    width: 320px;
+    height: 480px;
+    object-fit: cover;
+    background: black;
+}
+/* FLIP CARD */
+.flip-card {
+    perspective: 1200px;
+    cursor: pointer;
+}
+
+.flip-inner {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    transform-style: preserve-3d;
+    transition: transform 0.7s ease;
+}
+
+/* flipped state */
+.flip-card.flipped .flip-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-front,
+.flip-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+/* FRONT */
+.flip-front img,
+.flip-front video {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+/* BACK */
+.flip-back {
+    background: white;
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 25px;
+    text-align: center;
+    transform: rotateY(180deg);
+    box-sizing: border-box;
+    font-size: 16px;
+    line-height: 1.4;
+}
+.site-nav {
+    background: #FF69B4;
+    height: 20px;
+    overflow: hidden;
+    transition: height 0.4s ease;
+}
+
+.site-nav:hover {
+    height: 70px;
+}
+
+/* new inner layout */
+.nav-inner {
+    height: 70px;
+    display: flex;
+    align-items: center;
+    position: relative;
+}
+
+/* logo on the left */
+.nav-logo {
+    height: 34px;
+    margin-left: 20px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* show logo only when expanded */
+.site-nav:hover .nav-logo {
+    opacity: 1;
+}
+
+/* center links */
+.nav-links {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    white-space: nowrap;
+}
+
+.nav-links a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    margin: 0 15px;
+    line-height: 70px;
+    font-size: 19px;
+}
+

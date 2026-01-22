@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div id="intro">
+         <video autoplay muted playsinline>
+            <source src="image/Logo21.mp4" type="video/mp4">
+         </video>
+
+    </div>
+
+<header class="site-header">
+    <h1>Graphic Design Portfolio</h1>
+</header>
+
+
+<nav class="site-nav">
+    <div class="nav-inner">
+        <img src="image/Logo [Recovered].png" alt="logo" class="nav-logo">
+
+        <div class="nav-links">
+            <a href="index.html">About Me</a>
+            <a href="portfolio.html">Portfolio</a>
+            <a href="contact.html">Contact</a>
+        </div>
+    </div>
+</nav>
+
+
+<main class="main-area">
+
+  
+    <div class="pink-stripes"></div>
+
+    
+    <div class="center-zone">
+        <div class="layout">
+        <section class="content">
+
+            
+            <div class="image-area">
+                <button class="img-arrow left" onclick="prevImage()">‹</button>
+
+                <div class="image-frame">
+                    <div class="image-track">
+                        <img src="image/prof1.PNG" class="image-slide">
+                        <img src="image/prof2.PNG" class="image-slide">
+                        <img src="image/prof3.PNG" class="image-slide">
+                    </div>
+                </div>
+
+                <button class="img-arrow right" onclick="nextImage()">›</button>
+            </div>
+
+            
+           
+            <div class="text-area">
+                <h2>About Me</h2>
+
+                <div class="text-slider">
+                    <div class="text-track">
+                        <p class="text-slide">
+                            I’m a creative and motivated teen artist originally from Ukraine, now living in Canada. Art is a big part of my life and how I express myself. I love experimenting, making mistakes, and learning through the process. Creating helps me understand my emotions and the world around me.
+                        </p>
+                        <p class="text-slide">I really like animals, especially fish, sheep, and rabbits. Fish feel calm and almost hypnotic to watch. Sheep seem peaceful and comforting, and rabbits are small, soft, and full of personality. I find them inspiring in simple, quiet ways.</p>
+                        <p class="text-slide">There are a few places I really want to visit one day. Japan interests me because of its culture and atmosphere. Switzerland looks unreal with its mountains and nature. Germany attracts me for its history, cities, and creative scene, which I’d love to experience myself.</p>
+                    </div>
+                </div>
+
+                <div class="socials">
+                    <a href="#" target="_blank">
+                      <img src="image/Без названия.png" alt="X">
+                    </a>
+                    <a href="#" taregr="_blank">
+                        <img src="image/Без названия.jfif" alt="Instagram">
+                    </a>
+                    <a href="#"taregr="_blank">
+                        <img src="image/Без названия (1).png" alt="Facebook"></a>
+                </div>
+
+                <div class="text-nav">
+                    <button onclick="prevText()">‹ PREVIOUS</button>
+                    <button onclick="nextText()">NEXT ›</button>
+                </div>
+            </div>
+            </section>
+                <div class="wrap">
+                <div class="image-area2">
+                    <div class="image-frame1"><img id="ImgA" src="image/рыба.jfif"></div>
+                    <div class="image-frame2"><img id="ImgB" src="image/IMG_6280.png"></div>
+                    <div class="image-frame3 bottom-right"><img id="ImgC" src="image/гора япон.jfif"></div>
+                    </div>
+                    </div>
+            </div>
+        
+
+
+    </div>
+</div>
+</main>
+
+
+<footer>
+    © 2026 Elizabeth Polukhina
+</footer>
+
+<script>
+     const intro = document.getElementById("intro");
+        const video = intro.querySelector("video");
+
+         video.addEventListener("ended", () => {
+            intro.style.opacity = "0";
+
+        setTimeout(() => {
+            intro.style.display = "none";
+        }, 2500);
+    });
+
+const imageTrack = document.querySelector(".image-track");
+const imageSlides = document.querySelectorAll(".image-slide");
+let imgIndex = 0;
+
+function updateImage() {
+    imageTrack.style.transform = `translateX(-${imgIndex * 100}%)`;
+}
+
+function nextImage() {
+    imgIndex = (imgIndex + 1) % imageSlides.length;
+    updateImage();
+}
+
+function prevImage() {
+    imgIndex = (imgIndex - 1 + imageSlides.length) % imageSlides.length;
+    updateImage();
+}
+
+
+const textTrack = document.querySelector(".text-track");
+const textSlides = document.querySelectorAll(".text-slide");
+let textIndex = 0;
+
+function updateText() {
+    textTrack.style.transform = `translateX(-${textIndex * 100}%)`;
+}
+
+function nextText() {
+    textIndex = (textIndex + 1) % textSlides.length;
+    updateText();
+}
+
+function prevText() {
+    textIndex = (textIndex - 1 + textSlides.length) % textSlides.length;
+    updateText();
+}
+const imagesA = [
+  "image/рыба.jfif",
+  "image/крол.jfif",
+  "image/овца.jfif"
+];
+
+const imagesB = [
+  "image/IMG_6280.png",
+  "image/IMG_6485.png",
+  "image/IMG_6697.jpg"
+];
+
+const imagesC = [
+  "image/поле оду.jfif",
+  "image/гора япон.jfif",
+  "image/герман.jfif"
+];
+
+let index = 0;
+
+setInterval(() => {
+  index++;
+
+  const imgA = document.getElementById("ImgA");
+  const imgB = document.getElementById("ImgB");
+  const imgC = document.getElementById("ImgC");
+
+ 
+  imgA.style.opacity = 0;
+  imgB.style.opacity = 0;
+  imgC.style.opacity = 0;
+
+  setTimeout(() => {
+    imgA.src = imagesA[index % imagesA.length];
+    imgB.src = imagesB[index % imagesB.length];
+    imgC.src = imagesC[index % imagesC.length];
+
+   
+    imgA.style.opacity = 1;
+    imgB.style.opacity = 1;
+    imgC.style.opacity = 1;
+  }, 800); 
+}, 10000);
+</script>
+
+</body>
+</html>
