@@ -29,7 +29,6 @@ body {
 
 .site-nav {
     background: #FF69B4;
-    overflow: hidden;
     text-align: center;
 
     height: 20px;               
@@ -424,5 +423,6 @@ footer {
     line-height: 70px;
     font-size: 19px;
 }
+
 
 
