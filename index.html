@@ -192,21 +192,22 @@ setInterval(() => {
   imgB.style.opacity = 0;
   imgC.style.opacity = 0;
 
-  setTimeout(() => {
-    imgA.src = imagesA[index % imagesA.length];
-    imgB.src = imagesB[index % imagesB.length];
-    imgC.src = imagesC[index % imagesC.length];
+ setTimeout(() => {
+  imgA.src = imagesA[index % imagesA.length];
+  imgB.src = imagesB[index % imagesB.length];
+  imgC.src = imagesC[index % imagesC.length];
 
-   
-    imgA.style.opacity = 1;
-    imgB.style.opacity = 1;
-    imgC.style.opacity = 1;
-  }, 800); 
+  imgA.style.opacity = 1;
+  imgB.style.opacity = 1;
+  imgC.style.opacity = 1;
+}, 800);
+
 }, 10000);
 </script>
 
 </body>
 </html>
+
 
 
 
