@@ -187,26 +187,27 @@ setInterval(() => {
   const imgB = document.getElementById("ImgB");
   const imgC = document.getElementById("ImgC");
 
- 
   imgA.style.opacity = 0;
   imgB.style.opacity = 0;
   imgC.style.opacity = 0;
 
- setTimeout(() => {
-  imgA.src = imagesA[index % imagesA.length];
-  imgB.src = imagesB[index % imagesB.length];
-  imgC.src = imagesC[index % imagesC.length];
+  setTimeout(() => {
+    imgA.src = imagesA[indexA % imagesA.length];
+    imgB.src = imagesB[indexB % imagesB.length];
+    imgC.src = imagesC[indexC % imagesC.length];
 
-  imgA.style.opacity = 1;
-  imgB.style.opacity = 1;
-  imgC.style.opacity = 1;
-}, 800);
+    imgA.style.opacity = 1;
+    imgB.style.opacity = 1;
+    imgC.style.opacity = 1;
+  }, 800);
 
 }, 10000);
+
 </script>
 
 </body>
 </html>
+
 
 
 
