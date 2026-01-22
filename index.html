@@ -174,14 +174,10 @@ const imagesC = [
   "image/герман.jfif"
 ];
 
-let indexA = 0;
-let indexB = 0;
-let indexC = 0;
+let index = 0;
 
 setInterval(() => {
-  indexA++;
-  indexB++;
-  indexC++;
+  index++;
 
   const imgA = document.getElementById("ImgA");
   const imgB = document.getElementById("ImgB");
@@ -192,9 +188,9 @@ setInterval(() => {
   imgC.style.opacity = 0;
 
   setTimeout(() => {
-    imgA.src = imagesA[indexA % imagesA.length];
-    imgB.src = imagesB[indexB % imagesB.length];
-    imgC.src = imagesC[indexC % imagesC.length];
+    imgA.src = imagesA[index % imagesA.length];
+    imgB.src = imagesB[index % imagesB.length];
+    imgC.src = imagesC[index % imagesC.length];
 
     imgA.style.opacity = 1;
     imgB.style.opacity = 1;
@@ -203,10 +199,12 @@ setInterval(() => {
 
 }, 10000);
 
+
 </script>
 
 </body>
 </html>
+
 
 
 
