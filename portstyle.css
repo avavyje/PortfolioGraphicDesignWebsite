@@ -14,6 +14,7 @@ body {
 .site-header {
     background: black;
     min-height: 120px;
+    height: 120px;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -259,6 +260,7 @@ video.slide {
     line-height: 70px;
     font-size: 19px;
 }
+
 
 
 
