@@ -380,7 +380,6 @@ footer {
 .site-nav {
     background: #FF69B4;
     height: 20px;
-    overflow: hidden;
     transition: height 0.4s ease;
 }
 
@@ -425,4 +424,5 @@ footer {
     line-height: 70px;
     font-size: 19px;
 }
+
 
